@@ -14,7 +14,7 @@ Array.prototype.memory_title_shuffle = function(){
 }
 
 function newBoard(){
-  titles_flipped = 0;
+  tiles_flipped = 0;
   var output = '';
   memory_array.memory_title_shuffle();
   for(var i=0; i< memory_array.length ; i++){
@@ -39,7 +39,7 @@ function memoryFlipTile(title,val){
         memory_values = [];
         memory_title_ids = [];
         if(tiles_flipped == memory_array.length){
-          alert("Board Cleared... generating new board");
+          alert("You Won... generating new Game");
           document.getElementById('memory_board').innerHTML = "";
           newBoard();
         }
@@ -62,3 +62,7 @@ function memoryFlipTile(title,val){
     }
   }
 }
+
+$( document ).ready(function() {
+  $(".title").flip();
+});

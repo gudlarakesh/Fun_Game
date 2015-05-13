@@ -1,3 +1,6 @@
+body{
+  background-color: #27ae60;
+}
 #memory_board{
   background: #ccc;
   border: #999 1px solid;
@@ -5,6 +8,7 @@
   height: 430px;
   padding: 24px;
   margin: 0px auto;
+  transform: translateY(10%);
 }
 #memory_board .tile {
   background: url("icons/a1.png") no-repeat;
@@ -21,3 +25,24 @@
   text-align: center;
   box-sizing: border-box;
 }
+#heading{
+  text-align: center;
+  color: black;
+}
+#heading h3{
+  font-size: 30px;
+  text-decoration: underline;
+}
+#heading p{
+  font-size: 20px;
+}
+
+.score{
+  float: right;
+  border: 1px solid black;
+  height: 80px;
+  width: 80px;
+  padding: 20px;
+  margin-top: -105px;
+  margin-right: 200px;
+ }
