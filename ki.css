@@ -1,0 +1,23 @@
+#memory_board{
+  background: #ccc;
+  border: #999 1px solid;
+  width: 640px;
+  height: 430px;
+  padding: 24px;
+  margin: 0px auto;
+}
+#memory_board .tile {
+  background: url("icons/a1.png") no-repeat;
+  background-size: cover;
+  border:#000 1px solid;
+  width:86px;
+  height: 86px;
+  float: left;
+  margin: 10px;
+  padding: 10px;
+  font-size: 64px;
+  line-height: 64px;
+  cursor: pointer;
+  text-align: center;
+  box-sizing: border-box;
+}
