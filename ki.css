@@ -11,19 +11,35 @@ body{
   transform: translateY(10%);
 }
 #memory_board .tile {
+  border:#000 1px solid;
+  display: inline-block;
+  margin: 10px;
+  cursor: pointer;
+  text-align: center;
+  height: 84px;
+  width: 84px;
+}
+
+#memory_board .tile .front {
   background: url("icons/a1.png") no-repeat;
   background-size: cover;
-  border:#000 1px solid;
-  width:86px;
-  height: 86px;
-  float: left;
-  margin: 10px;
+  height: 84px;
+  width: 84px;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+}
+
+#memory_board .tile .back {
+  width:84px;
+  height: 84px;
+  background-color: white;
   padding: 10px;
   font-size: 64px;
   line-height: 64px;
-  cursor: pointer;
-  text-align: center;
   box-sizing: border-box;
+  top: 0;
+  left: 0;
 }
 #heading{
   text-align: center;
@@ -37,12 +53,3 @@ body{
   font-size: 20px;
 }
 
-.score{
-  float: right;
-  border: 1px solid black;
-  height: 80px;
-  width: 80px;
-  padding: 20px;
-  margin-top: -105px;
-  margin-right: 200px;
- }

@@ -18,15 +18,19 @@ function newBoard(){
   var output = '';
   memory_array.memory_title_shuffle();
   for(var i=0; i< memory_array.length ; i++){
-    output += '<div id="title_'+i+'" class="tile" onclick="memoryFlipTile(this, \''+memory_array[i]+'\')"></div>'; 
+    output += '<div id="title_'+i+'" class="tile" onclick="memoryFlipTile(this, \''+memory_array[i]+'\')"><span class="front"></span><span class="back">'+memory_array[i]+'</span></div>'; 
   }
   document.getElementById('memory_board').innerHTML = output;
+  $(".tile").flip({
+    trigger: 'manual'
+  });
 }
 
 function memoryFlipTile(title,val){
-  if(title.innerHTML == "" && memory_values.length < 2){
-    title.style.background = '#FFF';
-    title.innerHTML = val;
+  if(($.inArray(title.id, memory_title_ids) == -1) && memory_values.length < 2){
+    // title.style.background = '#FFF';
+    // title.innerHTML = val;
+    $(title).flip(true);
     if(memory_values.length == 0){
       memory_values.push(val);
       memory_title_ids.push(title.id);
@@ -47,12 +51,14 @@ function memoryFlipTile(title,val){
         function flip2Back() {
           var title_1 = document.getElementById(memory_title_ids[0]);
           var title_2 = document.getElementById(memory_title_ids[1]);
-          title_1.style.background = 'url(icons/a1.png) no-repeat';
-          title_1.style.backgroundSize = 'cover';
-          title_1.innerHTML = "";
-          title_2.style.background = 'url(icons/a1.png) no-repeat';
-          title_2.style.backgroundSize = 'cover';
-          title_2.innerHTML = "";
+          // title_1.style.background = 'url(icons/a1.png) no-repeat';
+          // title_1.style.backgroundSize = 'cover';
+          // title_1.innerHTML = "";
+          // title_2.style.background = 'url(icons/a1.png) no-repeat';
+          // title_2.style.backgroundSize = 'cover';
+          // title_2.innerHTML = "";
+          $(title_1).flip(false);
+          $(title_2).flip(false);
 
           memory_values = [];
           memory_title_ids = [];
@@ -63,6 +69,6 @@ function memoryFlipTile(title,val){
   }
 }
 
-$( document ).ready(function() {
-  $(".title").flip();
+$(document).ready(function() {
+  
 });
