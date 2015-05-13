@@ -1,4 +1,4 @@
-var memory_array = ['A' , 'A', 'B', 'B', 'C', 'C', 'D' , 'D','E','E', 'F', 'F', 'G','G','H','H','I','I','J','J','K','K','L','L'];
+var memory_array = ['1' , '1', '2', '2', '3', '3', '4' , '5','5','6', '6', '7', '7','8','8','9','9','10','10','11','11','12','12','4'];
 var memory_values = [];
 var memory_title_ids = [];
 var tiles_flipped = 0;
@@ -43,7 +43,7 @@ function memoryFlipTile(title,val){
         memory_values = [];
         memory_title_ids = [];
         if(tiles_flipped == memory_array.length){
-          alert("You Won... generating new Game");
+          alert("You Won....Ready for new Game");
           document.getElementById('memory_board').innerHTML = "";
           newBoard();
         }
